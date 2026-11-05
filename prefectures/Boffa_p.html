@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        Atlas de la mouche tsetse et son habitat en Guinée 
+    </title>
+<!--    <link-->
+<!--      rel="stylesheet"-->
+<!--      href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css"-->
+<!--      integrity="sha512-1k7mWiTNoyx2XtmI96o+hdjP8nn0f3Z2N4oF/9ZZRgijyV4omsKOXEnqL1gKQNPy2MTSP9rIEWGcH/CInulptA=="-->
+<!--      crossorigin="anonymous"-->
+<!--      referrerpolicy="no-referrer"-->
+<!--    />-->
+    <link type="text/css" href="../static/assets/css/index.css" rel="stylesheet">
+    
+    <!-- Specific Page CSS goes HERE -->
+    
+
+  </head>
+  <body class="app">
+    <!-- @TOC -->
+    <!-- =================================================== -->
+    <!--
+      + @Page Loader
+      + @App Content
+          - #Left Sidebar
+              > $Sidebar Header
+              > $Sidebar Menu
+
+          - #Main
+              > $Topbar
+              > $App Screen Content
+    -->
+
+    <!-- @Page Loader -->
+    <!-- =================================================== -->
+    <div id='loader'>
+      <div class="spinner"></div>
+    </div>
+
+    <script>
+      window.addEventListener('load', function load() {
+        const loader = document.getElementById('loader');
+        setTimeout(function() {
+          loader.classList.add('fadeOut');
+        }, 300);
+      });
+    </script>
+
+    <!-- @App Content -->
+    <!-- =================================================== -->
+    <div>
+
+        
+      <div class="sidebar">
+        <div class="sidebar-inner">
+          <!-- ### $Sidebar Header ### -->
+          <div class="sidebar-logo">
+            <div class="peers ai-c fxw-nw">
+              <div class="peer peer-greed">
+                <a class="sidebar-link td-n" href="../index.html">
+                  <div class="peers ai-c fxw-nw">
+<!--                    <div class="logo">-->
+                      <img class="atlas-logo" src="../static/assets/images/logo_atlas_small.png" alt="">
+<!--                    </div>-->
+                  </div>
+                </a>
+              </div>
+              <div class="peer">
+                <div class="mobile-toggle sidebar-toggle">
+                  <a href="" class="td-n">
+                    <i class="ti-arrow-circle-left"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ### $Sidebar Menu ### -->
+          <ul id="sidebar-container" class="sidebar-menu scrollable pos-r">
+            <li class="nav-item">
+              <a class='sidebar-link' href='../index.html'>
+                <span class="icon-holder">
+                  <img src="../static/assets/fonts/icons/GN.svg" alt="Guinea flag"></i>
+                </span>
+                
+                <span class="national-label"><strong>Données nationales</strong></span>
+                
+              </a>
+            </li>
+            
+              <li id="r_Boke" class="nav-item">
+                <a class='sidebar-link' href='../regions/Boke.html'>
+                  <span class="icon-holder">
+                    <i class="c-green-900 ti-map"></i>
+                  </span>
+                  
+                  <span class="region-label">Région de <strong>Boke</strong></span>
+                  
+                </a>
+              </li>
+              
+                <li id="p_Boffa" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Boffa_p.html'>
+                  
+                  <span class="prefecture-label current">- Préfecture de <strong>Boffa</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Boke" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Boke_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Boke</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Fria" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Fria_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Fria</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Gaoual" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Gaoual_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Gaoual</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Koundara" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Koundara_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Koundara</strong></span>
+                  
+                  </a>
+                </li>
+              
+            
+              <li id="r_Conakry" class="nav-item">
+                <a class='sidebar-link' href='../regions/Conakry.html'>
+                  <span class="icon-holder">
+                    <i class="c-green-900 ti-map"></i>
+                  </span>
+                  
+                  <span class="region-label">Région de <strong>Conakry</strong></span>
+                  
+                </a>
+              </li>
+              
+            
+              <li id="r_Faranah" class="nav-item">
+                <a class='sidebar-link' href='../regions/Faranah.html'>
+                  <span class="icon-holder">
+                    <i class="c-green-900 ti-map"></i>
+                  </span>
+                  
+                  <span class="region-label">Région de <strong>Faranah</strong></span>
+                  
+                </a>
+              </li>
+              
+                <li id="p_Dabola" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Dabola_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Dabola</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Dinguiraye" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Dinguiraye_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Dinguiraye</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Faranah" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Faranah_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Faranah</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Kissidougou" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Kissidougou_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Kissidougou</strong></span>
+                  
+                  </a>
+                </li>
+              
+            
+              <li id="r_Kankan" class="nav-item">
+                <a class='sidebar-link' href='../regions/Kankan.html'>
+                  <span class="icon-holder">
+                    <i class="c-green-900 ti-map"></i>
+                  </span>
+                  
+                  <span class="region-label">Région de <strong>Kankan</strong></span>
+                  
+                </a>
+              </li>
+              
+                <li id="p_Kankan" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Kankan_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Kankan</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Kerouane" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Kerouane_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Kerouane</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Kouroussa" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Kouroussa_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Kouroussa</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Mandiana" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Mandiana_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Mandiana</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Siguiri" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Siguiri_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Siguiri</strong></span>
+                  
+                  </a>
+                </li>
+              
+            
+              <li id="r_Kindia" class="nav-item">
+                <a class='sidebar-link' href='../regions/Kindia.html'>
+                  <span class="icon-holder">
+                    <i class="c-green-900 ti-map"></i>
+                  </span>
+                  
+                  <span class="region-label">Région de <strong>Kindia</strong></span>
+                  
+                </a>
+              </li>
+              
+                <li id="p_Coyah" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Coyah_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Coyah</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Dubreka" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Dubreka_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Dubreka</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Forecariah" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Forecariah_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Forecariah</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Kindia" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Kindia_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Kindia</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Telimele" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Telimele_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Telimele</strong></span>
+                  
+                  </a>
+                </li>
+              
+            
+              <li id="r_Labe" class="nav-item">
+                <a class='sidebar-link' href='../regions/Labe.html'>
+                  <span class="icon-holder">
+                    <i class="c-green-900 ti-map"></i>
+                  </span>
+                  
+                  <span class="region-label">Région de <strong>Labe</strong></span>
+                  
+                </a>
+              </li>
+              
+                <li id="p_Lelouma" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Lelouma_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Lelouma</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Koubia" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Koubia_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Koubia</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Labe" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Labe_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Labe</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Mali" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Mali_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Mali</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Tougue" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Tougue_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Tougue</strong></span>
+                  
+                  </a>
+                </li>
+              
+            
+              <li id="r_Mamou" class="nav-item">
+                <a class='sidebar-link' href='../regions/Mamou.html'>
+                  <span class="icon-holder">
+                    <i class="c-green-900 ti-map"></i>
+                  </span>
+                  
+                  <span class="region-label">Région de <strong>Mamou</strong></span>
+                  
+                </a>
+              </li>
+              
+                <li id="p_Dalaba" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Dalaba_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Dalaba</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Mamou" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Mamou_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Mamou</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Pita" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Pita_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Pita</strong></span>
+                  
+                  </a>
+                </li>
+              
+            
+              <li id="r_Nzerekore" class="nav-item">
+                <a class='sidebar-link' href='../regions/Nzerekore.html'>
+                  <span class="icon-holder">
+                    <i class="c-green-900 ti-map"></i>
+                  </span>
+                  
+                  <span class="region-label">Région de <strong>Nzerekore</strong></span>
+                  
+                </a>
+              </li>
+              
+                <li id="p_Beyla" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Beyla_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Beyla</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Gueckedou" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Gueckedou_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Gueckedou</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Lola" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Lola_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Lola</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Macenta" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Macenta_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Macenta</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Nzerekore" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Nzerekore_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Nzerekore</strong></span>
+                  
+                  </a>
+                </li>
+              
+                <li id="p_Yomou" class="nav-item">
+                  <a class='sidebar-link' href='../prefectures/Yomou_p.html'>
+                  
+                  <span class="prefecture-label">- Préfecture de <strong>Yomou</strong></span>
+                  
+                  </a>
+                </li>
+              
+            
+        </div>
+      </div>    
+
+      <!-- #Main ============================ -->
+      <div class="page-container">
+
+        <div class="header navbar">
+    <div class="header-container">
+
+      <ul class="nav-left">
+        <li>
+          <a id='sidebar-toggle' class="sidebar-toggle" href="javascript:void(0);">
+            <i class="ti-menu"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div class="site-title">
+        <h1 class="">Atlas de la mouche tsetse et son habitat en Guinée</h1>
+      </div>
+
+      <ul class="nav-right">
+      </ul>
+
+    </div>
+  </div>
+  
+
+        
+
+    <main class='main-content bgc-grey-100'>
+
+      <div id='mainContent'>
+
+        <div class="masonry-item col-12">
+          <div class="peers fxw-nw@lg+ ai-s">
+            <div class="peer peer-greed w-70p@lg+ w-100@lg- p-5 text-center">
+              <div class="layers">
+                <div class="layer w-100">
+                  <h2 class="current-title">Préfecture de Boffa</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="masonry-item col-12">
+          <div class="bd bgc-white">
+            <div class="peers fxw-nw@lg+ ai-s">
+              <div class="peer peer-greed w-70p@lg+ w-100@lg- p-20">
+                <div class="layers">
+                  <div class="layer w-100">
+                    <div id="map"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gap-20 masonry pos-r">
+          <div class="masonry-sizer col-md-6"></div>
+          <div class="masonry-item  w-100">
+            <div class="row gap-20">
+              <!-- #Total traps ==================== -->
+              <div class='col-md-3'>
+                <div class="layers bd bgc-white p-20">
+                  <div class="layer w-100 mB-10">
+                    <h5 class="lh-1 text-center">Nombre total de pièges</h5>
+                  </div>
+                  <div class="layer w-100">
+                    <div class="peers ai-sb fxw-nw">
+                        <span
+                            data-purecounter-start="0"
+                            data-purecounter-end="0"
+                            class="purecounter">
+                            0
+                        </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- #Total tsetse ==================== -->
+              <div class='col-md-3'>
+                <div class="layers bd bgc-white p-20">
+                  <div class="layer w-100 mB-10">
+                    <h5 class="lh-1 text-center">Nombre de mouches capturées</h5>
+                  </div>
+                  <div class="layer w-100">
+                    <div class="peers ai-sb fxw-nw">
+                        <span
+                            data-purecounter-start="0"
+                            data-purecounter-end="0"
+                            class="purecounter">
+                            0
+                        </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- # Nb tsetse sepcies ==================== -->
+              <div class='col-md-3'>
+                <div class="layers bd bgc-white p-20">
+                  <div class="layer w-100 mB-10">
+                    <h5 class="lh-1 text-center">Espèces de tsetse observées</h5>
+                  </div>
+                  <div class="layer w-100">
+                    <div class="peers ai-sb fxw-nw">
+                        <span
+                            data-purecounter-start="0"
+                            data-purecounter-end="0"
+                            class="purecounter">
+                            0
+                        </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- # Nb habitat described ==================== -->
+              <div class='col-md-3'>
+                <div class="layers bd bgc-white p-20">
+                  <div class="layer w-100 mB-10">
+                    <h5 class="lh-1 text-center">Nombre d'habitats décrits</h5>
+                  </div>
+                  <div class="layer w-100">
+                    <div class="peers ai-sb fxw-nw">
+                        <span
+                            data-purecounter-start="0"
+                            data-purecounter-end="0"
+                            class="_purecounter w-100p text-center">
+                            -
+                        </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+ 
+
+        <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+    <span>
+        &copy; IRD - PNLMTN-PCC 2026
+    </span>
+</footer>
+
+      </div>
+
+    </div>
+
+    
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous"referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+<script src='https://unpkg.com/simple-statistics@8.0.0/dist/simple-statistics.min.js'>
+</script>
+
+<script src="https://unpkg.com/chroma-js@3.2.0/dist/chroma.min.cjs"></script>
+
+<link rel="stylesheet" href="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.css" />
+<script src="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.js"></script>
+
+<script>
+    var asset_root = "static/assets";
+    var root = "..";
+</script>
+
+    <!-- Specific Page JS goes HERE -->
+    
+<script>
+    var current = "p_Boffa";
+</script>
+<script  src="../static/assets/js/prefecture.js"></script>
+    
+
+</body>
+</html>
