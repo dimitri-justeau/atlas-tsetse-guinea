@@ -10,6 +10,8 @@
     <script src="../static/assets/js/color-modes.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.28.0/dist/bootstrap-table.min.css">
     <link type="text/css" href="../static/assets/css/index.css" rel="stylesheet">
     <style>.bd-placeholder-img {
         font-size: 1.125rem;
@@ -202,9 +204,7 @@
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page"
                        href='../index.html'>
-                        <span class="icon-holder">
-                          <img src="../static/assets/fonts/icons/GN.svg" alt="Guinea flag">
-                        </span>
+                        <span class="icon-holder">🇬🇳</span>
                         
                         <span class="national-label"><strong>Données nationales</strong></span>
                         
@@ -649,15 +649,18 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <span><b>Nombre de mouches capturées</b>: 3 </span>
+                        <span style="vertical-align: top;">🪰</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Espèces de tsetse observées</b>: 1 </span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Nombre de femeles</b>: 0 </span>
+                        <span style="vertical-align: top;">♀️</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Nombre de mâles</b>: 3 </span>
+                        <span style="vertical-align: top;">♂️</span>
                     </li>
                 </ul>
             </div>
@@ -677,16 +680,22 @@
                         <span><b>Type de végétation</b>:  Forêt galerie</span>
                     </li>
                     <li class="list-group-item">
-                        <span><b>Nombre de plantes identifiées</b>: </span>
+                        <span><b>Nombre d'espèces de plantes identifiées</b>: 16</span>
+                        <span style="vertical-align: top;">🌱</span>
                     </li>
                     <li class="list-group-item">
-                        <span><b>Nombre d'espèces de plantes identifiées</b>: </span>
+                        <span><b>Nombre de familles botaniques représentées</b>: 12</span>
+                        <span style="vertical-align: top;">🌿</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Altitude</b>: 30m</span>
+                        <span style="vertical-align: top;">⛰️</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Cours d'eau au moment de la capture</b>: Oui</span>
+                        
+                            <span style="vertical-align: top;">💧</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Type de sol principal</b>: Limoneux</span>
@@ -701,25 +710,38 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <span><b>Niveau général d'anthropisation</b>: Élevé</span>
+                        <span><b>Niveau général d'anthropisation</b>:
+                            <meter min="0" max="4" low="1.1" , high="2" optimum="0.99"
+                                   value="2"></meter>
+                            Modéré
+                        </span>
                     </li>
                     <li class="list-group-item">
-                        <span><b>Niveau de pollution (déchets)</b>:  Élevé</span>
+                        <span><b>Niveau de pollution (déchets)</b>:
+                            <meter min="0" max="4" low="1.1" , high="2" optimum="0.99"
+                                   value="3"></meter>
+                            Élevé
+                        </span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Présence de phytosanitaires</b>: Inconnu</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Zone paturée</b>: Inconnu</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Traces de feu</b>: Non</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Coupe de bois constatée</b>: Non</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Activités minières (ou liées)</b>: Non</span>
+                        
                     </li>
                 </ul>
             </div>
@@ -729,20 +751,184 @@
         <div class="col pe-0 ps-0">
             <div class="card">
                 <div class="card-header">
-                    <h5>Espèces de plantes identifiées</h5>
+                    <h5>Identifications botaniques</h5>
                 </div>
-                <table class="table table-bordered mb-0">
+                <table class="table table-bordered mb-0 table-striped table-hover"
+                       data-toggle="table"
+                       data-pagination="true"
+                       data-sortable="true">
                     <thead>
                     <tr>
-                        <th>Nom complet</th>
-                        <th>Famille</th>
-                        <th>Genre</th>
-                        <th>Espèce</th>
-                        <th>Rang taxonomique</th>
-                        <th>Collecteur</th>
+                        <th data-sortable="true">Nom complet</th>
+                        <th data-sortable="true">Famille</th>
+                        <th data-sortable="true">Genre</th>
+                        <th data-sortable="true">Espèce</th>
+                        <th data-sortable="true">Auteur</th>
+                        <th data-sortable="true">Collecteur</th>
+                        <th data-sortable="true">Lien POWO</th>
                     </tr>
                     </thead>
                     <tbody>
+                    
+                    <tr>
+                        <td><b><em>Urena lobata</em></b></td>
+                        <td><em>Malvaceae</em></td>
+                        <td><em>Urena</em></td>
+                        <td><em>lobata</em></td>
+                        <td>L.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:564786-1">564786-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Saccharum officinarum</em></b></td>
+                        <td><em>Poaceae</em></td>
+                        <td><em>Saccharum</em></td>
+                        <td><em>officinarum</em></td>
+                        <td>L.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:419977-1">419977-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Sphagneticola trilobata</em></b></td>
+                        <td><em>Compositae</em></td>
+                        <td><em>Sphagneticola</em></td>
+                        <td><em>trilobata</em></td>
+                        <td>(L.) Pruski</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:1093589-2">1093589-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Bidens asperata</em></b></td>
+                        <td><em>Compositae</em></td>
+                        <td><em>Bidens</em></td>
+                        <td><em>asperata</em></td>
+                        <td>(Hutch. & Dalziel) Sherff</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:184742-1">184742-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Palisota hirsuta</em></b></td>
+                        <td><em>Commelinaceae</em></td>
+                        <td><em>Palisota</em></td>
+                        <td><em>hirsuta</em></td>
+                        <td>(Thunb.) K.Schum.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:172918-1">172918-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Alchornea cordifolia</em></b></td>
+                        <td><em>Phyllanthaceae</em></td>
+                        <td><em>Alchornea</em></td>
+                        <td><em>cordifolia</em></td>
+                        <td>(Schumach. & Thonn.) Müll.Arg.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:338380-1">338380-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Manihot esculenta</em></b></td>
+                        <td><em>Phyllanthaceae</em></td>
+                        <td><em>Manihot</em></td>
+                        <td><em>esculenta</em></td>
+                        <td>Crantz</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:351790-1">351790-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Dichrostachys cinerea</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Dichrostachys</em></td>
+                        <td><em>cinerea</em></td>
+                        <td>(L.) Wight & Arn.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:492423-1">492423-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Xylopia aethiopica</em></b></td>
+                        <td><em>Annonaceae</em></td>
+                        <td><em>Xylopia</em></td>
+                        <td><em>aethiopica</em></td>
+                        <td>(Dunal) A.Rich.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:76056-1">76056-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Detarium senegalense</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Detarium</em></td>
+                        <td><em>senegalense</em></td>
+                        <td>J.F.Gmel.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:492283-1">492283-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Smeathmannia laevigata</em></b></td>
+                        <td><em>Passifloraceae</em></td>
+                        <td><em>Smeathmannia</em></td>
+                        <td><em>laevigata</em></td>
+                        <td>Sol. ex R.Br.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:675626-1">675626-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Syzygium guineense</em></b></td>
+                        <td><em>Myrtaceae</em></td>
+                        <td><em>Syzygium</em></td>
+                        <td><em>guineense</em></td>
+                        <td>(Willd.) DC.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:601750-1">601750-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Elaeis guineensis</em></b></td>
+                        <td><em>Arecaceae</em></td>
+                        <td><em>Elaeis</em></td>
+                        <td><em>guineensis</em></td>
+                        <td>Jacq.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:666802-1">666802-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Mangifera indica</em></b></td>
+                        <td><em>Anacardiaceae</em></td>
+                        <td><em>Mangifera</em></td>
+                        <td><em>indica</em></td>
+                        <td>L.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:69913-1">69913-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Gmelina arborea</em></b></td>
+                        <td><em>Lamiaceae</em></td>
+                        <td><em>Gmelina</em></td>
+                        <td><em>arborea</em></td>
+                        <td>Roxb. ex Sm.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:77159191-1">77159191-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Cola nitida</em></b></td>
+                        <td><em>Malvaceae</em></td>
+                        <td><em>Cola</em></td>
+                        <td><em>nitida</em></td>
+                        <td>(Vent.) Schott & Endl.</td>
+                        <td>Youssouf Conté</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:822755-1">822755-1</a></td>
+                    </tr>
                     
                     </tbody>
                 </table>
@@ -782,9 +968,9 @@
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.28.0/dist/bootstrap-table.min.js"></script>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="

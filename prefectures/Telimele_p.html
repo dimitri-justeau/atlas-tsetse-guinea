@@ -10,6 +10,8 @@
     <script src="../static/assets/js/color-modes.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.28.0/dist/bootstrap-table.min.css">
     <link type="text/css" href="../static/assets/css/index.css" rel="stylesheet">
     <style>.bd-placeholder-img {
         font-size: 1.125rem;
@@ -202,9 +204,7 @@
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page"
                        href='../index.html'>
-                        <span class="icon-holder">
-                          <img src="../static/assets/fonts/icons/GN.svg" alt="Guinea flag">
-                        </span>
+                        <span class="icon-holder">🇬🇳</span>
                         
                         <span class="national-label"><strong>Données nationales</strong></span>
                         
@@ -628,9 +628,11 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <span><b>Nombre total de pièges</b>: 15</span>
+                        <span style="vertical-align: top;">🪤</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Nombre de mouches capturées</b>: 40</span>
+                        <span style="vertical-align: top;">🪰</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Espèces de tsetse observées</b>: 1</span>
@@ -646,14 +648,395 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <span><b>Types d'habitats rencontrés</b>: 4</span>
+                        <span style="vertical-align: top;">⛰️</span>
                     </li>
                     <li class="list-group-item">
-                        <span><b>Nombre de plantes identifiées</b>: 101</span>
+                        <span><b>Nombre de plantes identifiées</b>: 97</span>
+                        <span style="vertical-align: top;">🌱</span>
                     </li>
                     <li class="list-group-item">
-                        <span><b>Nombre d'espèces de plantes identifiées</b>: 37</span>
+                        <span><b>Nombre d'espèces de plantes identifiées</b>: 35</span>
+                        <span style="vertical-align: top;">🌿</span>
                     </li>
                 </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col pe-0 ps-0">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Identifications botaniques</h5>
+                </div>
+                <table class="table table-bordered mb-0 table-striped table-hover"
+                       data-toggle="table"
+                       data-pagination="true"
+                       data-sortable="true">
+                    <thead>
+                    <tr>
+                        <th data-sortable="true">Nom complet</th>
+                        <th data-sortable="true">Famille</th>
+                        <th data-sortable="true">Genre</th>
+                        <th data-sortable="true">Espèce</th>
+                        <th data-sortable="true">Auteur</th>
+                        <th data-sortable="true">Nombre d'observations</th>
+                        <th data-sortable="true">Lien POWO</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td><b><em>Diospyros feliciana</em></b></td>
+                        <td><em>Ebenaceae</em></td>
+                        <td><em>Diospyros</em></td>
+                        <td><em>feliciana</em></td>
+                        <td>Letouzey & F.White</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:322390-1">322390-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Mesanthemum radicans</em></b></td>
+                        <td><em>Eriocaulaceae</em></td>
+                        <td><em>Mesanthemum</em></td>
+                        <td><em>radicans</em></td>
+                        <td>(Benth.) Körn.</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:335972-1">335972-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Alchornea cordifolia</em></b></td>
+                        <td><em>Phyllanthaceae</em></td>
+                        <td><em>Alchornea</em></td>
+                        <td><em>cordifolia</em></td>
+                        <td>(Schumach. & Thonn.) Müll.Arg.</td>
+                        <td>10</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:338380-1">338380-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Hymenocardia acida</em></b></td>
+                        <td><em>Phyllanthaceae</em></td>
+                        <td><em>Hymenocardia</em></td>
+                        <td><em>acida</em></td>
+                        <td>Tul.</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:350085-1">350085-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Uapaca togoensis</em></b></td>
+                        <td><em>Phyllanthaceae</em></td>
+                        <td><em>Uapaca</em></td>
+                        <td><em>togoensis</em></td>
+                        <td>Pax</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:358179-1">358179-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Albizia adianthifolia</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Albizia</em></td>
+                        <td><em>adianthifolia</em></td>
+                        <td>(Schumach.) W.Wight</td>
+                        <td>4</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:473166-1">473166-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Anthonotha macrophylla</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Anthonotha</em></td>
+                        <td><em>macrophylla</em></td>
+                        <td>P.Beauv.</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:474593-1">474593-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Daniellia oliveri</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Daniellia</em></td>
+                        <td><em>oliveri</em></td>
+                        <td>(Rolfe) Hutch. & Dalziel</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:490996-1">490996-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Erythrophleum suaveolens</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Erythrophleum</em></td>
+                        <td><em>suaveolens</em></td>
+                        <td>(Guill. & Perr.) Brenan</td>
+                        <td>3</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:494641-1">494641-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Kotschya carsonii</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Kotschya</em></td>
+                        <td><em>carsonii</em></td>
+                        <td>(Baker) Dewit & P.A.Duvign.</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:501273-1">501273-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Pterocarpus santalinoides</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Pterocarpus</em></td>
+                        <td><em>santalinoides</em></td>
+                        <td>L'Hér. ex DC.</td>
+                        <td>3</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:516568-1">516568-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Anthocleista nobilis</em></b></td>
+                        <td><em>Gentianaceae</em></td>
+                        <td><em>Anthocleista</em></td>
+                        <td><em>nobilis</em></td>
+                        <td>G.Don</td>
+                        <td>3</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:545634-1">545634-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Dicellandra barteri</em></b></td>
+                        <td><em>Melastomataceae</em></td>
+                        <td><em>Dicellandra</em></td>
+                        <td><em>barteri</em></td>
+                        <td>Hook.f.</td>
+                        <td>3</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:568176-1">568176-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Carapa procera</em></b></td>
+                        <td><em>Meliaceae</em></td>
+                        <td><em>Carapa</em></td>
+                        <td><em>procera</em></td>
+                        <td>DC.</td>
+                        <td>7</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:577711-1">577711-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Myrianthus libericus</em></b></td>
+                        <td><em>Urticaceae</em></td>
+                        <td><em>Myrianthus</em></td>
+                        <td><em>libericus</em></td>
+                        <td>Rendle</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:584395-1">584395-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Syzygium guineense</em></b></td>
+                        <td><em>Myrtaceae</em></td>
+                        <td><em>Syzygium</em></td>
+                        <td><em>guineense</em></td>
+                        <td>(Willd.) DC.</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:601750-1">601750-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Calophyllum africanum</em></b></td>
+                        <td><em>Calophyllaceae</em></td>
+                        <td><em>Calophyllum</em></td>
+                        <td><em>africanum</em></td>
+                        <td>Cheek & Q.Luke</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:60471715-2">60471715-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Lophira lanceolata</em></b></td>
+                        <td><em>Ochnaceae</em></td>
+                        <td><em>Lophira</em></td>
+                        <td><em>lanceolata</em></td>
+                        <td>Tiegh. ex Keay</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:606368-1">606368-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Pandanus candelabrum</em></b></td>
+                        <td><em>Pandanaceae</em></td>
+                        <td><em>Pandanus</em></td>
+                        <td><em>candelabrum</em></td>
+                        <td>P.Beauv.</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:670807-1">670807-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Carpolobia lutea</em></b></td>
+                        <td><em>Polygalaceae</em></td>
+                        <td><em>Carpolobia</em></td>
+                        <td><em>lutea</em></td>
+                        <td>G.Don</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:690168-1">690168-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Lannea acida</em></b></td>
+                        <td><em>Anacardiaceae</em></td>
+                        <td><em>Lannea</em></td>
+                        <td><em>acida</em></td>
+                        <td>A.Rich.</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:69738-1">69738-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Bertiera chevalieri</em></b></td>
+                        <td><em>Rubiaceae</em></td>
+                        <td><em>Bertiera</em></td>
+                        <td><em>chevalieri</em></td>
+                        <td>Hutch. & Dalziel</td>
+                        <td>4</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:744427-1">744427-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Crossopteryx febrifuga</em></b></td>
+                        <td><em>Rubiaceae</em></td>
+                        <td><em>Crossopteryx</em></td>
+                        <td><em>febrifuga</em></td>
+                        <td>(Afzel. ex G.Don) Benth.</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:747858-1">747858-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Cyperus odoratus</em></b></td>
+                        <td><em>Cyperaceae</em></td>
+                        <td><em>Cyperus</em></td>
+                        <td><em>odoratus</em></td>
+                        <td>L.</td>
+                        <td>5</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:74939-2">74939-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Mitragyna stipulosa</em></b></td>
+                        <td><em>Rubiaceae</em></td>
+                        <td><em>Mitragyna</em></td>
+                        <td><em>stipulosa</em></td>
+                        <td>(DC.) Kuntze</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:756304-1">756304-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Morinda longiflora</em></b></td>
+                        <td><em>Rubiaceae</em></td>
+                        <td><em>Morinda</em></td>
+                        <td><em>longiflora</em></td>
+                        <td>G.Don</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:756416-1">756416-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Nauclea diderrichii</em></b></td>
+                        <td><em>Rubiaceae</em></td>
+                        <td><em>Nauclea</em></td>
+                        <td><em>diderrichii</em></td>
+                        <td>(De Wild.) Merr.</td>
+                        <td>6</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:757089-1">757089-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Nauclea latifolia</em></b></td>
+                        <td><em>Rubiaceae</em></td>
+                        <td><em>Nauclea</em></td>
+                        <td><em>latifolia</em></td>
+                        <td>Sm.</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:757144-1">757144-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Xylopia aethiopica</em></b></td>
+                        <td><em>Annonaceae</em></td>
+                        <td><em>Xylopia</em></td>
+                        <td><em>aethiopica</em></td>
+                        <td>(Dunal) A.Rich.</td>
+                        <td>8</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:76056-1">76056-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Gilbertiodendron tonkolili</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Gilbertiodendron</em></td>
+                        <td><em>tonkolili</em></td>
+                        <td>Burgt & Estrella</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:77119682-1">77119682-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Rosettea elliotii</em></b></td>
+                        <td><em>Melastomataceae</em></td>
+                        <td><em>Rosettea</em></td>
+                        <td><em>elliotii</em></td>
+                        <td>(Gilg) Ver.-Lib. & G.Kadereit</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:77214936-1">77214936-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Voacanga africana</em></b></td>
+                        <td><em>Apocynaceae</em></td>
+                        <td><em>Voacanga</em></td>
+                        <td><em>africana</em></td>
+                        <td>Stapf</td>
+                        <td>2</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:82719-1">82719-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Ficus sur</em></b></td>
+                        <td><em>Moraceae</em></td>
+                        <td><em>Ficus</em></td>
+                        <td><em>sur</em></td>
+                        <td>Forssk.</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:853792-1">853792-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Myrianthus arboreus</em></b></td>
+                        <td><em>Urticaceae</em></td>
+                        <td><em>Myrianthus</em></td>
+                        <td><em>arboreus</em></td>
+                        <td>P.Beauv.</td>
+                        <td>6</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:854739-1">854739-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><b><em>Parkia biglobosa</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Parkia</em></td>
+                        <td><em>biglobosa</em></td>
+                        <td>(Jacq.) R.Br. ex G.Don</td>
+                        <td>1</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:941491-1">941491-1</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -690,9 +1073,9 @@
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.28.0/dist/bootstrap-table.min.js"></script>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="

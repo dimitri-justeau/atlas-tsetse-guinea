@@ -10,6 +10,8 @@
     <script src="../static/assets/js/color-modes.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.28.0/dist/bootstrap-table.min.css">
     <link type="text/css" href="../static/assets/css/index.css" rel="stylesheet">
     <style>.bd-placeholder-img {
         font-size: 1.125rem;
@@ -202,9 +204,7 @@
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page"
                        href='../index.html'>
-                        <span class="icon-holder">
-                          <img src="../static/assets/fonts/icons/GN.svg" alt="Guinea flag">
-                        </span>
+                        <span class="icon-holder">🇬🇳</span>
                         
                         <span class="national-label"><strong>Données nationales</strong></span>
                         
@@ -649,15 +649,18 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <span><b>Nombre de mouches capturées</b>: 6 </span>
+                        <span style="vertical-align: top;">🪰</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Espèces de tsetse observées</b>: 1 </span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Nombre de femeles</b>: 3 </span>
+                        <span style="vertical-align: top;">♀️</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Nombre de mâles</b>: 3 </span>
+                        <span style="vertical-align: top;">♂️</span>
                     </li>
                 </ul>
             </div>
@@ -677,16 +680,22 @@
                         <span><b>Type de végétation</b>:  Forêt galerie</span>
                     </li>
                     <li class="list-group-item">
-                        <span><b>Nombre de plantes identifiées</b>: </span>
+                        <span><b>Nombre d'espèces de plantes identifiées</b>: 11</span>
+                        <span style="vertical-align: top;">🌱</span>
                     </li>
                     <li class="list-group-item">
-                        <span><b>Nombre d'espèces de plantes identifiées</b>: </span>
+                        <span><b>Nombre de familles botaniques représentées</b>: 7</span>
+                        <span style="vertical-align: top;">🌿</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Altitude</b>: 424m</span>
+                        <span style="vertical-align: top;">⛰️</span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Cours d'eau au moment de la capture</b>: Oui</span>
+                        
+                            <span style="vertical-align: top;">💧</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Type de sol principal</b>: Argilo-limoneux</span>
@@ -701,25 +710,44 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <span><b>Niveau général d'anthropisation</b>: Très élevé</span>
+                        <span><b>Niveau général d'anthropisation</b>:
+                            <meter min="0" max="4" low="1.1" , high="2" optimum="0.99"
+                                   value="3"></meter>
+                            Élevé
+                        </span>
                     </li>
                     <li class="list-group-item">
-                        <span><b>Niveau de pollution (déchets)</b>:  Très élevé</span>
+                        <span><b>Niveau de pollution (déchets)</b>:
+                            <meter min="0" max="4" low="1.1" , high="2" optimum="0.99"
+                                   value="4"></meter>
+                            Très élevé
+                        </span>
                     </li>
                     <li class="list-group-item">
                         <span><b>Présence de phytosanitaires</b>: Inconnu</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Zone paturée</b>: Oui</span>
+                        
+                            <span style="vertical-align: top;">🐮</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Traces de feu</b>: Oui</span>
+                        
+                        <span style="vertical-align: top;">🔥</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Coupe de bois constatée</b>: Oui</span>
+                        
+                            <span style="vertical-align: top;">🪵</span>
+                        
                     </li>
                     <li class="list-group-item">
                         <span><b>Activités minières (ou liées)</b>: Non</span>
+                        
                     </li>
                 </ul>
             </div>
@@ -729,118 +757,133 @@
         <div class="col pe-0 ps-0">
             <div class="card">
                 <div class="card-header">
-                    <h5>Espèces de plantes identifiées</h5>
+                    <h5>Identifications botaniques</h5>
                 </div>
-                <table class="table table-bordered mb-0">
+                <table class="table table-bordered mb-0 table-striped table-hover"
+                       data-toggle="table"
+                       data-pagination="true"
+                       data-sortable="true">
                     <thead>
                     <tr>
-                        <th>Nom complet</th>
-                        <th>Famille</th>
-                        <th>Genre</th>
-                        <th>Espèce</th>
-                        <th>Rang taxonomique</th>
-                        <th>Collecteur</th>
+                        <th data-sortable="true">Nom complet</th>
+                        <th data-sortable="true">Famille</th>
+                        <th data-sortable="true">Genre</th>
+                        <th data-sortable="true">Espèce</th>
+                        <th data-sortable="true">Auteur</th>
+                        <th data-sortable="true">Collecteur</th>
+                        <th data-sortable="true">Lien POWO</th>
                     </tr>
                     </thead>
                     <tbody>
                     
                     <tr>
-                        <td>Diospyros feliciana</td>
-                        <td>Ebenaceae</td>
-                        <td>Diospyros</td>
-                        <td>feliciana</td>
-                        <td>species</td>
+                        <td><b><em>Diospyros feliciana</em></b></td>
+                        <td><em>Ebenaceae</em></td>
+                        <td><em>Diospyros</em></td>
+                        <td><em>feliciana</em></td>
+                        <td>Letouzey & F.White</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:322390-1">322390-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Alchornea cordifolia</td>
-                        <td>Phyllanthaceae</td>
-                        <td>Alchornea</td>
-                        <td>cordifolia</td>
-                        <td>species</td>
+                        <td><b><em>Alchornea cordifolia</em></b></td>
+                        <td><em>Phyllanthaceae</em></td>
+                        <td><em>Alchornea</em></td>
+                        <td><em>cordifolia</em></td>
+                        <td>(Schumach. & Thonn.) Müll.Arg.</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:338380-1">338380-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Bertiera chevalieri</td>
-                        <td>Rubiaceae</td>
-                        <td>Bertiera</td>
-                        <td>chevalieri</td>
-                        <td>species</td>
+                        <td><b><em>Bertiera chevalieri</em></b></td>
+                        <td><em>Rubiaceae</em></td>
+                        <td><em>Bertiera</em></td>
+                        <td><em>chevalieri</em></td>
+                        <td>Hutch. & Dalziel</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:744427-1">744427-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Nauclea diderrichii</td>
-                        <td>Rubiaceae</td>
-                        <td>Nauclea</td>
-                        <td>diderrichii</td>
-                        <td>species</td>
+                        <td><b><em>Nauclea diderrichii</em></b></td>
+                        <td><em>Rubiaceae</em></td>
+                        <td><em>Nauclea</em></td>
+                        <td><em>diderrichii</em></td>
+                        <td>(De Wild.) Merr.</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:757089-1">757089-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Carapa procera</td>
-                        <td>Meliaceae</td>
-                        <td>Carapa</td>
-                        <td>procera</td>
-                        <td>species</td>
+                        <td><b><em>Carapa procera</em></b></td>
+                        <td><em>Meliaceae</em></td>
+                        <td><em>Carapa</em></td>
+                        <td><em>procera</em></td>
+                        <td>DC.</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:577711-1">577711-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Erythrophleum suaveolens</td>
-                        <td>Fabaceae</td>
-                        <td>Erythrophleum</td>
-                        <td>suaveolens</td>
-                        <td>species</td>
+                        <td><b><em>Erythrophleum suaveolens</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Erythrophleum</em></td>
+                        <td><em>suaveolens</em></td>
+                        <td>(Guill. & Perr.) Brenan</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:494641-1">494641-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Xylopia aethiopica</td>
-                        <td>Annonaceae</td>
-                        <td>Xylopia</td>
-                        <td>aethiopica</td>
-                        <td>species</td>
+                        <td><b><em>Xylopia aethiopica</em></b></td>
+                        <td><em>Annonaceae</em></td>
+                        <td><em>Xylopia</em></td>
+                        <td><em>aethiopica</em></td>
+                        <td>(Dunal) A.Rich.</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:76056-1">76056-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Pterocarpus santalinoides</td>
-                        <td>Fabaceae</td>
-                        <td>Pterocarpus</td>
-                        <td>santalinoides</td>
-                        <td>species</td>
+                        <td><b><em>Pterocarpus santalinoides</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Pterocarpus</em></td>
+                        <td><em>santalinoides</em></td>
+                        <td>L'Hér. ex DC.</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:516568-1">516568-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Nauclea latifolia</td>
-                        <td>Rubiaceae</td>
-                        <td>Nauclea</td>
-                        <td>latifolia</td>
-                        <td>species</td>
+                        <td><b><em>Nauclea latifolia</em></b></td>
+                        <td><em>Rubiaceae</em></td>
+                        <td><em>Nauclea</em></td>
+                        <td><em>latifolia</em></td>
+                        <td>Sm.</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:757144-1">757144-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Gilbertiodendron tonkolili</td>
-                        <td>Fabaceae</td>
-                        <td>Gilbertiodendron</td>
-                        <td>tonkolili</td>
-                        <td>species</td>
+                        <td><b><em>Gilbertiodendron tonkolili</em></b></td>
+                        <td><em>Fabaceae</em></td>
+                        <td><em>Gilbertiodendron</em></td>
+                        <td><em>tonkolili</em></td>
+                        <td>Burgt & Estrella</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:77119682-1">77119682-1</a></td>
                     </tr>
                     
                     <tr>
-                        <td>Carpolobia lutea</td>
-                        <td>Polygalaceae</td>
-                        <td>Carpolobia</td>
-                        <td>lutea</td>
-                        <td>species</td>
+                        <td><b><em>Carpolobia lutea</em></b></td>
+                        <td><em>Polygalaceae</em></td>
+                        <td><em>Carpolobia</em></td>
+                        <td><em>lutea</em></td>
+                        <td>G.Don</td>
                         <td>Aminata Thiam</td>
+                        <td><a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:690168-1">690168-1</a></td>
                     </tr>
                     
                     </tbody>
@@ -881,9 +924,9 @@
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.28.0/dist/bootstrap-table.min.js"></script>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
