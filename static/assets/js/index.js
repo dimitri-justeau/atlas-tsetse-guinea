@@ -46,7 +46,14 @@ fetch(all_traps_path)
     .then(response => response.json())
     .then(data => {
         function tooltip(feature, layer) {
-            layer.bindTooltip(String("<b>" + feature.properties.code + "</b>: " + feature.properties.total_tsetse) +' mouches');
+            let tooltip_label = feature.properties.total_tsetse + " mouches";
+            if (feature.properties.total_tsetse == 1) {
+                tooltip_label = feature.properties.total_tsetse + " mouche";
+            }
+            if (feature.properties.total_tsetse == 0) {
+                tooltip_label = "Pas de mouches"
+            }
+            layer.bindTooltip(String("<b>" + feature.properties.code + "</b>: " + tooltip_label));
             layer.on({
                 click: function(e) {
                     window.location.href = root + "/" + "traps/" + feature.properties.code + ".html";

@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "PAL2-AFRICAM-2021",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 117, "code": "PAL2-AFRICAM-2021", "start_date": "2021-11-09", "end_date": "2021-11-11", "locality_id": 24, "collectors": "Kagbadouno M, Camara D, Bart JM, Camara M", "trap_id": null, "zone": null, "vegetation": null, "soil_main": null, "soil_secondary": null, "river": null, "waste_pollution": null, "anthropization": null, "phytosanitary_products": null, "livestock": null, "logging": null, "fire_marks": null, "mining_related_activity": null, "elevation": null, "total_tsetse": 0 }, "geometry": { "type": "Point", "coordinates": [ -8.8913078, 8.0295724 ] } }
+]
+}
