@@ -26,18 +26,22 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var region_path = root + "/" + asset_root + "/geojson/regions.geojson";
-var regions_geojson = null;
-var all_traps_path = root + "/" + asset_root + "/geojson/all_traps.geojson";
-var all_traps_geojson = null;
+let region_path = root + "/" + asset_root + "/geojson/regions.geojson";
+let regions_geojson = null;
+let all_traps_path = root + "/" + asset_root + "/geojson/all_traps.geojson";
+let singleTraps_geojson = null;
+let followUpTraps_geojson = null;
 
 fetch(region_path)
     .then(response => response.json())
     .then(data => {
         regions_geojson = L.geoJSON(data).addTo(map);
         map.fitBounds(regions_geojson.getBounds());
-        if (all_traps_geojson != null) {
-            all_traps_geojson.bringToFront();
+        if (singleTraps_geojson != null) {
+            singleTraps_geojson.bringToFront();
+        }
+        if (followUpTraps_geojson != null) {
+            followUpTraps_geojson.bringToFront();
         }
     })
     .catch(error => console.error('Erreur lors du chargement du fichier GeoJSON :', error));
@@ -46,11 +50,11 @@ fetch(all_traps_path)
     .then(response => response.json())
     .then(data => {
         function tooltip(feature, layer) {
-            let tooltip_label = feature.properties.total_tsetse + " mouches";
-            if (feature.properties.total_tsetse == 1) {
-                tooltip_label = feature.properties.total_tsetse + " mouche";
+            let tooltip_label = feature.properties.latest_total + " mouches";
+            if (feature.properties.latest_total == 1) {
+                tooltip_label = feature.properties.latest_total + " mouche";
             }
-            if (feature.properties.total_tsetse == 0) {
+            if (feature.properties.latest_total == 0) {
                 tooltip_label = "Pas de mouches"
             }
             layer.bindTooltip(String("<b>" + feature.properties.code + "</b>: " + tooltip_label));
@@ -60,6 +64,8 @@ fetch(all_traps_path)
                 }
             });
         }
+        let singleTraps = data.features.filter(f => f.properties.recurrent == false);
+        let followUpTraps = data.features.filter(f => f.properties.recurrent == true);
         let classes = [0, 1, 5, 10, 15]
         let colorRamp = [
             chroma("#ffffff").alpha(0.7),
@@ -68,7 +74,7 @@ fetch(all_traps_path)
             chroma("#f03b20").alpha(0.7),
             chroma("#bd0026").alpha(0.7)
         ]
-        if (data.features.length <= 5) {
+        if (singleTraps.length <= 5 || followUpTraps.length <= 5) {
             classes = [0, 1, 10]
             colorRamp = [
                 chroma("#ffffff").alpha(0.7),
@@ -76,20 +82,37 @@ fetch(all_traps_path)
                 chroma("#f03b20").alpha(0.7)
             ]
         }
-        all_traps_geojson = L.dataClassification(data, {
+        singleTraps_geojson = L.dataClassification(singleTraps, {
             // required:
             mode: 'manual',
             classes: classes,
-            field: 'total_tsetse',
+            field: 'latest_total',
             colorRamp: colorRamp,
+            pointShape: "circle",
             legendTemplate: {
                 highest: '{low} mouches et plus',
                 middle: '{low} à {high} mouches',
                 lowest: 'Pas de capture',
             },
-            legendTitle: 'Nombre de mouches capturées',
+            legendTitle: 'Piégeage ponctuel',
             onEachFeature: tooltip,
         }).addTo(map);
-        all_traps_geojson.bringToFront();
+        followUpTraps_geojson = L.dataClassification(followUpTraps, {
+            // required:
+            mode: 'manual',
+            classes: classes,
+            field: 'latest_total',
+            colorRamp: colorRamp,
+            pointShape: "diamond",
+            legendTemplate: {
+                highest: '{low} mouches et plus',
+                middle: '{low} à {high} mouches',
+                lowest: 'Pas de capture',
+            },
+            legendTitle: 'Piégeage récurrent (dernière capture)',
+            onEachFeature: tooltip,
+        }).addTo(map);
+        singleTraps_geojson.bringToFront();
+        followUpTraps_geojson.bringToFront();
     })
     .catch(error => console.error('Erreur lors du chargement du fichier GeoJSON :', error));

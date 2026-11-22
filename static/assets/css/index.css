@@ -71,7 +71,16 @@
 }
 
 #map-trap {
-    height: 30vh;
+    height: 40vh;
+}
+
+#bar-chart-container {
+    height: 40vh;
+}
+
+#bar-chart {
+    height: 100%;
+    margin: 0 auto;
 }
 
 .site-title {

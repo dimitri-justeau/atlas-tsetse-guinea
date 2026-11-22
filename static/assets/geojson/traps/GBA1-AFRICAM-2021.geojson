@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "GBA1-AFRICAM-2021",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "id": 143, "code": "GBA1-AFRICAM-2021", "start_date": "2021-11-12", "end_date": "2021-11-14", "locality_id": 30, "collectors": "Kagbadouno M, Camara D, Bart JM, Camara M", "trap_id": null, "zone": null, "vegetation": null, "soil_main": null, "soil_secondary": null, "river": null, "waste_pollution": null, "anthropization": null, "phytosanitary_products": null, "livestock": null, "logging": null, "fire_marks": null, "mining_related_activity": null, "elevation": null, "total_tsetse": 0 }, "geometry": { "type": "Point", "coordinates": [ -9.0603379, 7.4684851 ] } }
-]
-}
