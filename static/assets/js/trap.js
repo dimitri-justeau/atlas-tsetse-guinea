@@ -47,7 +47,6 @@ fetch(trap_path)
             start_date: data.features[0].properties.start_date,
             total_tsetse: data.features[0].properties.total_tsetse
         }].concat(followUp);
-        followUp.sort(function(a, b) { return new Date(a.start_date) - new Date(b.start_date); });
         if (followUp.length > 0) {
             let chartData = {
                 labels: followUp.map(({ start_date }) => start_date),

@@ -90,37 +90,91 @@ fetch(prefecture_traps_path)
         if (singleTraps.length <= 3) {
             singleTraps = [singleTraps[0], singleTraps[0], singleTraps[0]];
         }
-        singleTraps_geojson = L.dataClassification(singleTraps, {
-            // required:
-            mode: 'manual',
-            classes: classes,
-            field: 'latest_total',
-            colorRamp: colorRamp,
-            pointShape: "circle",
-            legendTemplate: {
-                highest: '{low} mouches et plus',
-                middle: '{low} à {high} mouches',
-                lowest: 'Pas de capture',
-            },
-            legendTitle: 'Piégeage ponctuel',
-            onEachFeature: tooltip,
-        }).addTo(map);
-        followUpTraps_geojson = L.dataClassification(followUpTraps, {
-            // required:
-            mode: 'manual',
-            classes: classes,
-            field: 'latest_total',
-            colorRamp: colorRamp,
-            pointShape: "diamond",
-            legendTemplate: {
-                highest: '{low} mouches et plus',
-                middle: '{low} à {high} mouches',
-                lowest: 'Pas de capture',
-            },
-            legendTitle: 'Piégeage récurrent (dernière capture)',
-            onEachFeature: tooltip,
-        }).addTo(map);
-        singleTraps_geojson.bringToFront();
-        followUpTraps_geojson.bringToFront();
+        if (singleTraps.length > 0) {
+            singleTraps_geojson = L.dataClassification(singleTraps, {
+                // required:
+                mode: 'manual',
+                classes: classes,
+                field: 'latest_total',
+                colorRamp: colorRamp,
+                pointShape: "circle",
+                legendTemplate: {
+                    highest: '{low} mouches et plus',
+                    middle: '{low} à {high} mouches',
+                    lowest: 'Pas de capture',
+                },
+                legendTitle: 'Piégeage ponctuel',
+                onEachFeature: tooltip,
+            }).addTo(map);
+            singleTraps_geojson.bringToFront();
+        }
+        if (followUpTraps.length > 0) {
+            followUpTraps_geojson = L.dataClassification(followUpTraps, {
+                // required:
+                mode: 'manual',
+                classes: classes,
+                field: 'latest_total',
+                colorRamp: colorRamp,
+                pointShape: "diamond",
+                legendTemplate: {
+                    highest: '{low} mouches et plus',
+                    middle: '{low} à {high} mouches',
+                    lowest: 'Pas de capture',
+                },
+                legendTitle: 'Piégeage récurrent (dernière capture)',
+                onEachFeature: tooltip,
+            }).addTo(map);
+            followUpTraps_geojson.bringToFront();
+        }
+
+        let catch_count = {};
+        data.features.forEach((feat) => {
+            feat.properties.all_catch_start_dates.forEach((date) => {
+                let d = new Date(date);
+                let monthYear = String(d.getMonth() + 1 + "-" + d.getFullYear());
+                if (monthYear in catch_count) {
+                    catch_count[monthYear] += 1;
+                } else {
+                    catch_count[monthYear] = 1;
+                }
+            });
+        });
+        if (Object.keys(catch_count).length > 0) {
+            let chartData = {
+                datasets: [{
+                    label: 'Nombre de piègeages',
+                    data: catch_count,
+                    backgroundColor: '#5B066D99',
+                    borderColor: '#5B066D',
+                    borderWidth: 1
+                },]
+            };
+            // Configuration options for the chart
+            let options = {
+                maintainAspectRatio: true,
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'month',
+                            round: 'month',
+                            parser: "M-yyyy",
+                            tooltipFormat: "MM-yyyy"
+                        }
+                    }
+                }
+            };
+
+            // Get the canvas element
+            let ctx = document.getElementById('bar-chart')
+                .getContext('2d');
+
+            // Create the bar chart
+            let myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+                options: options
+            });
+        }
     })
     .catch(error => console.error('Erreur lors du chargement du fichier GeoJSON :', error));

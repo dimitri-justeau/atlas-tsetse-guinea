@@ -674,6 +674,20 @@
             </div>
         </div>
     </div>
+
+    
+    <div class="row mb-3">
+        <div class="card" style="padding: 0;">
+            <div class="card-header">
+                <h5>Piègeages au cours du temps</h5>
+            </div>
+            <div id="bar-chart-container">
+                <canvas id="bar-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+
     <div class="row mb-3">
         <div class="col pe-0 ps-0">
             <div class="card">
@@ -1703,6 +1717,9 @@
 
 <link rel="stylesheet" href="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.css"/>
 <script src="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
 <script>
     var asset_root = "static/assets";
